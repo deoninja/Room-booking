@@ -1,11 +1,11 @@
-import Image from "next/image";
+import RoomCard from '@/components/RoomCard';
 import rooms from '@/data/rooms.json'
 
 export default function Home() {
   return (
     < >
     {rooms.length > 0 ? (
-      rooms.map((room) => <h3>{room.name}</h3>)) : (<p>No Rooms Available at the moment</p>)}
+      rooms.map((room) => <RoomCard room={room}/>)) : (<p>No Rooms Available at the moment</p>)}
     </>
   );
 }
