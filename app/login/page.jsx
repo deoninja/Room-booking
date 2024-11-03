@@ -1,5 +1,6 @@
 'use client'
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 import { useEffect, useActionState } from "react";
 // import { useFormState}  from 'react-dom';
 import createSession from "../actions/createSession";
@@ -7,13 +8,14 @@ import { toast } from 'react-toastify';
 import { redirect } from "next/navigation";
 
 const LoginPage = () => {
+  const router = useRouter();
   const [state, formAction] = useActionState(createSession, {});
 
   useEffect(() => {
     if(state.error) toast.error(state.error);
     if(state.success) {
       toast.success('Logged in successfully!');
-      redirect('/')
+      router.push('/')
     }
   }, [state])
 
