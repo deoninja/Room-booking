@@ -12,10 +12,10 @@ export default async function Home() {
   const rooms = await getAllRooms();
 
   return (
-    < >
+    <>
     <Heading title='Available Rooms'/>
     {rooms?.length > 0 ? (
-      rooms.map((room) => <RoomCard room={room}/>)) : (<p>No Rooms Available at the moment</p>)}
+      rooms.map((room) => <RoomCard room={room} key={room.$id}/>)) : (<p>No Rooms Available at the moment</p>)}
     </>
   );
 }
