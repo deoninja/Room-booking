@@ -3,12 +3,18 @@ import Link from "next/link";
 import { useEffect, useActionState } from "react";
 // import { useFormState}  from 'react-dom';
 import createSession from "../actions/createSession";
+import { toast } from 'react-toastify';
+import { redirect } from "next/navigation";
 
 const LoginPage = () => {
   const [state, formAction] = useActionState(createSession, {});
 
   useEffect(() => {
-    if(state.error) console.log(state.error)
+    if(state.error) toast.error(state.error);
+    if(state.success) {
+      toast.success('Logged in successfully!');
+      redirect('/')
+    }
   }, [state])
 
   return (
@@ -28,7 +34,7 @@ const LoginPage = () => {
               id="email"
               name="email"
               className="border rounded w-full py-2 px-3"
-              
+            
             />
           </div>
 
