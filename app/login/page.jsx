@@ -5,7 +5,6 @@ import { useEffect, useActionState } from "react";
 // import { useFormState}  from 'react-dom';
 import createSession from "../actions/createSession";
 import { toast } from 'react-toastify';
-import { redirect } from "next/navigation";
 
 const LoginPage = () => {
   const router = useRouter();

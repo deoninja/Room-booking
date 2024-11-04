@@ -13,7 +13,7 @@ export async function middleware(request) {
     return NextResponse.next();
 }
 
-// run only on login
+// run only on /bookings
 export const config = {
     matcher: ['/bookings'],
 }
