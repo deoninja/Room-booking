@@ -8,7 +8,7 @@ import createUser from "@/app/actions/createUser";
 import Link from "next/link";
 
 const RegisterPage = () => {
-  const [state, formAction] = useActionState(createUser, {});
+  const [state, formAction] = useActionState(createUser,  {});
 
   const router = useRouter();
 
@@ -23,7 +23,7 @@ const RegisterPage = () => {
   return (
     <div className="flex items-center justify-center">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-sm mt-20">
-        <form action={formAction}>
+        <form action={formAction} >
           <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
             Register
           </h2>

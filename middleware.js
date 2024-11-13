@@ -14,7 +14,7 @@ export async function middleware(request) {
     return NextResponse.next();
 }
 
-// run only on /bookings
+// run only on /bookings, /rooms/add', /rooms/my
 export const config = {
-    matcher: ['/bookings'],
+    matcher: ['/bookings', '/rooms/add', '/rooms/my'],
 }
