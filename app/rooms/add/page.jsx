@@ -80,7 +80,7 @@ const AddRoomPage = () => {
 
         <div className='mb-4'>
           <label
-            htmlFor='price_per_hour'
+            for='price_per_hour'
             className='block text-gray-700 font-bold mb-2'
           >
             Price Per Hour
