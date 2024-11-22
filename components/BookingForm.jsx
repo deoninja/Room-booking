@@ -6,7 +6,7 @@ import { useEffect, useActionState } from "react";
 import { toast } from 'react-toastify';
 import bookRoom from '@/app/actions/bookRoom';
 
-const BookingForm = (room) => {
+const BookingForm = ({room}) => {
   const [state, formAction] = useActionState(bookRoom, {});
 
   const router = useRouter();
